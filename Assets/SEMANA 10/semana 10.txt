@@ -1,0 +1,12 @@
+Con los bloques creados, utilizamos el patrón Flyweight para poder reducir la cantidad
+de memoria utilizada al compartir de manera eficiente objetos que tienne un gran 
+número de instancias. En este caso el script ChangeColor, administra el cambio de color
+de un objeto renderizable en unity. Entonces en vez de crear un nuevo Color, cada 
+que se cambia el color del objeto renderizable, se utiliza un conjunto limitado de
+colores.
+
+Uso de la memoria Heap y Stack:
+
+Stack: En la pila se almacenan las variables locales y los datos relacionados con las llamadas a funciones. En este caso, variables locales como rend, propblock, intervaloTiempo y tiempoPasado se almacenan en la pila. Estas variables no consumen mucha memoria en sí mismas, ya que son solo referencias a objetos en el montón o valores primitivos.
+
+Heap: En el montón se almacenan los objetos grandes y los datos que pueden vivir más allá del ámbito de una función. En este caso, los objetos Renderer y MaterialPropertyBlock se crean en el montón utilizando la palabra clave new en el método Awake(). Además, los objetos Color generados por la función ChageColorAzar() también se crean en el montón cada vez que se llama.

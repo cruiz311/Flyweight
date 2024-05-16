@@ -12,10 +12,6 @@ public class ChangeColor : MonoBehaviour
         rend = GetComponent<Renderer>();
         propblock = new MaterialPropertyBlock();
     }
-    void Start()
-    {
-    }
-
     public void Update()
     {
         rend.GetPropertyBlock(propblock);
@@ -28,13 +24,11 @@ public class ChangeColor : MonoBehaviour
             
         }
     }
-
     private Color ChageColorAzar()
     {
         return new Color(
             r: Random.Range(0f, 1f),
             g: Random.Range(0f, 1f),
             b: Random.Range(0f, 1f));
-        
     }
 }
